@@ -40,4 +40,18 @@ describe 'String'
       '$100,000'.digitize.should.eql '100000'
     end
   end
+  
+  describe '#wrap'
+    describe 'with a single string'
+      it 'should wrap using string as prefix and suffix'
+        'foo'.wrap('|').should.eql '|foo|'
+      end
+    end
+    
+    describe 'with several strings'
+      it 'should wrap first as prefix, last as suffix'
+        'foo'.wrap('(', ')').should.eql '(foo)'
+      end
+    end
+  end
 end
