@@ -21,6 +21,12 @@ they will be available as methods. For quick access to all that ext.js has to of
   * Number#week       / Number#weeks
   * Number#month      / Number#months
   * Number#year       / Number#years
+  * Number#toMinutes
+  * Number#toHours
+  * Number#toDays
+  * Number#toWeeks
+  * Number#toMonths
+  * Number#toYears
   
 ### Base64
   
