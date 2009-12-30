@@ -8,7 +8,7 @@ uses the CommonJS module pattern when needed.
 
 ## Extensions
 
-Most extensions are both exported for functional use, or when **Ext.extend** us **true**
+Most extensions are both exported for functional use, or when **Ext.extend** is **true**
 they will be available as methods. For quick access to all that ext.js has to offer *require('ext/import')*.
 
 ### Number
