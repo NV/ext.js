@@ -2,7 +2,7 @@
 process.mixin(GLOBAL, require('sys'))
 require.paths.unshift('spec', 'spec/lib/lib', 'lib')
 require('jspec')
-require('ext')
+require('ext/import')
 
 quit = process.exit
 print = puts
