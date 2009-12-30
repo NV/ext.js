@@ -1,8 +1,11 @@
 
+number = require('ext/number')
+
 describe 'Number'
   describe '#ordinalize'
     describe 'with an integer'
       it 'should return an ordinal string'
+        number.ordinalize(1).should.eql '1st'
         (1).ordinalize.should.eql '1st'
         (2).ordinalize.should.eql '2nd'
         (3).ordinalize.should.eql '3rd'
