@@ -26,4 +26,12 @@ describe 'String'
       end
     end
   end
+  
+  describe '#camelcase'
+    describe 'given several words'
+      it 'should convert them to camel case'
+        'foo bar baz'.camelcase.should.eql 'FooBarBaz'
+      end
+    end
+  end
 end
