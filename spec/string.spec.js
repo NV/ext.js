@@ -54,4 +54,20 @@ describe 'String'
       end
     end
   end
+  
+  describe '#startsWith()'
+    it 'should check if a string starts with another'
+      'foobar'.startsWith('foo').should.be_true
+      'barfoo'.startsWith('foo').should.be_false
+      ' foobar'.startsWith('foo').should.be_false
+    end
+  end
+  
+  describe '#endsWith()'
+    it 'should check if a string ends with another'
+      'foobar'.endsWith('bar').should.be_true
+      'barfoo'.endsWith('bar').should.be_false
+      'foobar '.endsWith('bar').should.be_false
+    end
+  end
 end
