@@ -23,5 +23,6 @@ if (process.ARGV[2])
 else
   JSpec
     .exec('spec/base64.spec.js')
+    .exec('spec/number.spec.js')
 JSpec.run({ formatter: JSpec.formatters.Terminal, failuresOnly: true })
 JSpec.report()
