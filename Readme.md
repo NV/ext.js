@@ -1,5 +1,5 @@
 
-# JSext - JavaScript Extensions &amp; Utilities
+# ext.js - JavaScript Extensions &amp; Utilities
 
 High quality JavaScript extensions for various tasks such as 
 formatting dates, currency helpers, and more. This library targets
@@ -9,7 +9,7 @@ uses the CommonJS module pattern when needed.
 ## Extensions
 
 Most extensions are both exported for functional use, or when **Ext.extend** us **true**
-they will be available as methods. For quick access to all that JSext has to offer *require('ext/import')*.
+they will be available as methods. For quick access to all that ext.js has to offer *require('ext/import')*.
 
 ### Number
   
