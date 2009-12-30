@@ -14,6 +14,11 @@ they will be available as methods. For quick access to all that JSext has to off
 ### Number
   
   * Number#ordinalize  /  ordinalize(n)
+  
+### Base64
+  
+  * String#base64Encode / encode(str)
+  * String#base64Decode / decode(str)
 
 ## Running Tests
 
