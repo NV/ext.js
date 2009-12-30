@@ -34,4 +34,10 @@ describe 'String'
       end
     end
   end
+  
+  describe '#digitize'
+    it 'should strip non numeric characters'
+      '$100,000'.digitize.should.eql '100000'
+    end
+  end
 end
