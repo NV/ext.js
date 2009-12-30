@@ -6,6 +6,15 @@ formatting dates, currency helpers, and more. This library targets
 server-side frameworks such as [Express](http://github.com/visionmedia/express) and
 uses the CommonJS module pattern when needed.
 
+## Extensions
+
+Most extensions are both exported for functional use, or when **Ext.extend** us **true**
+they will be available as methods. For quick access to all that JSext has to offer *require('ext/import')*.
+
+### Number
+  
+  * Number#ordinalize  /  ordinalize(n)
+
 ## Running Tests
 
 Initialize and update the JSpec submodule, then run:
