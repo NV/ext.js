@@ -34,6 +34,7 @@ they will be available as methods. For quick access to all that ext.js has to of
   * String#lowercase
   * String#camelcase
   * String#digitize
+  * String#remove(pattern)
   * String#startsWith(str)
   * String#endsWith(str)
   * String#capitalize([all])

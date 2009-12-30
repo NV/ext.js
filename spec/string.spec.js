@@ -70,4 +70,10 @@ describe 'String'
       'foobar '.endsWith('bar').should.be_false
     end
   end
+  
+  describe '#remove()'
+    it 'should replace substrings matching the given regexp'
+      'foobar barfoo'.remove(/foo(bar)?/g).should.eql ' bar'
+    end
+  end
 end
