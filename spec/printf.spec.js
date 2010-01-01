@@ -2,6 +2,12 @@
 sprintf = require('ext/printf').sprintf
 
 describe 'sprintf()'
+  describe '%'
+    it 'should be literal'
+      sprintf('%').should.eql '%'
+    end  
+  end
+  
   describe '%c'
     it 'should output a single character'
       sprintf('%c', 'a').should.eql 'a'
