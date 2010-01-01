@@ -76,4 +76,10 @@ describe 'String'
       'foobar barfoo'.remove(/foo(bar)?/g).should.eql ' bar'
     end
   end
+  
+  describe '#strip'
+    it 'should remove leading and trailing whitespace'
+      ' \n\n foo bar '.strip.should.eql 'foo bar'
+    end
+  end
 end
