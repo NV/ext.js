@@ -95,5 +95,12 @@ describe 'Date'
         (new Date('December 5 1987 12:00:12 am')).format('%m').should.eql '12'
       end
     end
+    
+    describe '%M'
+      it 'should represent minute with leading zero'
+        (new Date('February 5 1987 12:02:05 am')).format('%M').should.eql '02'
+        (new Date('December 5 1987 12:34:12 am')).format('%M').should.eql '34'
+      end
+    end
   end
 end
