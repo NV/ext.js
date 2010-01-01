@@ -35,6 +35,8 @@ they will be available as methods. For quick access to all that ext.js has to of
   * String#camelcase
   * String#digitize
   * String#strip
+  * String#padLeft(width[, char])
+  * String#padRight(width[, char])
   * String#remove(pattern)
   * String#startsWith(str)
   * String#endsWith(str)
@@ -61,6 +63,10 @@ they will be available as methods. For quick access to all that ext.js has to of
   
   * String#base64Encode / encode(str)
   * String#base64Decode / decode(str)
+  
+### printf
+  
+  * sprintf(str[, arg[, ...]])
 
 ## Running Tests
 
