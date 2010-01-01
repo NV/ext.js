@@ -26,5 +26,6 @@ else
     .exec('spec/number.spec.js')
     .exec('spec/string.spec.js')
     .exec('spec/date.spec.js')
+    .exec('spec/printf.spec.js')
 JSpec.run({ formatter: JSpec.formatters.Terminal, failuresOnly: true })
 JSpec.report()
