@@ -25,5 +25,6 @@ else
     .exec('spec/base64.spec.js')
     .exec('spec/number.spec.js')
     .exec('spec/string.spec.js')
+    .exec('spec/date.spec.js')
 JSpec.run({ formatter: JSpec.formatters.Terminal, failuresOnly: true })
 JSpec.report()
