@@ -61,5 +61,19 @@ describe 'Date'
         (new Date('January 5 1987')).format('day: %e').should.eql 'day: 5'
       end
     end
+    
+    describe '%p'
+      it 'should represent AM / PM'
+        (new Date('January 5 1987 12:00 am')).format('%p').should.eql 'AM'
+        (new Date('January 5 1987 12:00 pm')).format('%p').should.eql 'PM'
+      end
+    end
+    
+    describe '%P'
+      it 'should represent am / pm'
+        (new Date('January 5 1987 12:00 am')).format('%P').should.eql 'am'
+        (new Date('January 5 1987 12:00 pm')).format('%P').should.eql 'pm'
+      end
+    end
   end
 end
