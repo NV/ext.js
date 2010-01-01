@@ -75,5 +75,12 @@ describe 'Date'
         (new Date('January 5 1987 12:00 pm')).format('%P').should.eql 'pm'
       end
     end
+    
+    describe '%S'
+      it 'should represent seconds with leading zero'
+        (new Date('January 5 1987 12:00:05 am')).format('%S').should.eql '05'
+        (new Date('January 5 1987 12:00:12 am')).format('%S').should.eql '12'
+      end
+    end
   end
 end
