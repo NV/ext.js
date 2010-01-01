@@ -35,6 +35,20 @@ describe 'sprintf()'
     end
   end
   
+  describe '%5d'
+    it 'should pad left'
+      sprintf('%5d', 5).should.eql '    5'
+      sprintf('%5d', 500).should.eql '  500'
+    end
+  end
+  
+  describe '%-5d'
+    it 'should pad right'
+      sprintf('%5d', 5).should.eql '5    '
+      sprintf('%5d', 500).should.eql '500  '
+    end
+  end
+  
   describe '%s'
     it 'should convert to a string'
       sprintf('%s', 'foo').should.eql 'foo'
