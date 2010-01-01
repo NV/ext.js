@@ -28,4 +28,14 @@ describe 'sprintf()'
       -{ sprintf('%d', []) }.should.throw_error
     end
   end
+  
+  describe '%s'
+    it 'should convert to a string'
+      sprintf('%s', 'foo').should.eql 'foo'
+      sprintf('%s', 12).should.eql '12'
+      sprintf('%s', 12.99).should.eql '12.99'
+      sprintf('%s', { foo: 'bar' }).should.eql '[object Object]'
+      sprintf('%s', [1,2]).should.eql '1,2'
+    end
+  end
 end
