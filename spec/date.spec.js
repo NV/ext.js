@@ -102,5 +102,13 @@ describe 'Date'
         (new Date('December 5 1987 12:34:12 am')).format('%M').should.eql '34'
       end
     end
+    
+    describe '%H'
+      it 'should represent hours with leading zero'
+        (new Date('February 5 1987 0:02:05 am')).format('%H').should.eql '00'
+        (new Date('February 5 1987 2:02:05 am')).format('%H').should.eql '02'
+        (new Date('December 5 1987 1:34:12 pm')).format('%H').should.eql '13'
+      end
+    end
   end
 end
