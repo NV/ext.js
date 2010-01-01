@@ -48,5 +48,18 @@ describe 'Date'
         (new Date('January 5 1987')).format('month: %B').should.eql 'month: January'
       end
     end
+    
+    describe '%d'
+      it 'should represent a day of the month with leading zero'
+        (new Date('January 5 1987')).format('day: %d').should.eql 'day: 05'
+        (new Date('January 15 1987')).format('day: %d').should.eql 'day: 15'
+      end
+    end
+    
+    describe '%e'
+      it 'should represent a day of the month without leading zero'
+        (new Date('January 5 1987')).format('day: %e').should.eql 'day: 5'
+      end
+    end
   end
 end
