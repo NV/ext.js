@@ -25,6 +25,12 @@ describe 'Date'
   end
   
   describe '#format'
+    describe '%'
+      it 'should be a literal'
+        (new Date('May 5 1987')).format('%').should.eql '%'
+      end  
+    end
+    
     describe '%a'
       it 'should represent a short day name'
         (new Date('May 5 1987')).format('day: %a').should.eql 'day: Tue'
