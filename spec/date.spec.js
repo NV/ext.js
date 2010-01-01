@@ -23,4 +23,30 @@ describe 'Date'
       (new Date('May 5 1987')).shortDayName.should.eql 'Tue'
     end
   end
+  
+  describe '#format'
+    describe '%a'
+      it 'should represent a short day name'
+        (new Date('May 5 1987')).format('day: %a').should.eql 'day: Tue'
+      end
+    end
+    
+    describe '%A'
+      it 'should represent a full day name'
+        (new Date('May 5 1987')).format('day: %A').should.eql 'day: Tuesday'
+      end
+    end
+    
+    describe '%b'
+      it 'should represent a short month name'
+        (new Date('January 5 1987')).format('month: %b').should.eql 'month: Jan'
+      end
+    end
+    
+    describe '%B'
+      it 'should represent a full month name'
+        (new Date('January 5 1987')).format('month: %B').should.eql 'month: January'
+      end
+    end
+  end
 end
