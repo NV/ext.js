@@ -77,6 +77,36 @@ describe 'String'
     end
   end
   
+  describe '#padLeft()'
+    it 'should pad the given width to the left'
+      'foo'.padLeft(5).should.eql '  foo'
+    end
+    
+    it 'should pad n spaces on the left with an optional character'
+      'foo'.padLeft(5, '-').should.eql '--foo'
+    end
+    
+    it 'should not pad when width is less than length'
+      'foo'.padLeft(3).should.eql 'foo'
+      'foo'.padLeft(2).should.eql 'foo'
+    end
+  end
+  
+  describe '#padRight()'
+    it 'should pad the given width to the right'
+      'foo'.padRight(5).should.eql 'foo  '
+    end
+    
+    it 'should pad n spaces on the right with an optional character'
+      'foo'.padRight(5, '-').should.eql 'foo--'
+    end
+    
+    it 'should not pad when width is less than length'
+      'foo'.padRight(3).should.eql 'foo'
+      'foo'.padRight(2).should.eql 'foo'
+    end
+  end
+  
   describe '#strip'
     it 'should remove leading and trailing whitespace'
       ' \n\n foo bar '.strip.should.eql 'foo bar'
