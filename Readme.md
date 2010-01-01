@@ -41,6 +41,22 @@ they will be available as methods. For quick access to all that ext.js has to of
   * String#capitalize([all])
   * String#wrap(prefix[, suffix])
   
+### Date
+
+  * Date#year
+  * Date#month
+  * Date#date
+  * Date#day
+  * Date#hours
+  * Date#minutes
+  * Date#seconds
+  * Date#milliseconds
+  * Date#monthName
+  * Date#shortMonthName
+  * Date#dayName
+  * Date#shortDayName
+  * Date#format(str)
+  
 ### Base64
   
   * String#base64Encode / encode(str)
