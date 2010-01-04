@@ -9,13 +9,26 @@ describe 'sprintf()'
   end
   
   describe '%c'
-    it 'should output a single character'
-      sprintf('%c', 'a').should.eql 'a'
-      sprintf('%c', 'abc').should.eql 'a'
+    describe 'when given a string'
+      it 'should output a single character'
+        sprintf('%c', 'a').should.eql 'a'
+        sprintf('%c', 'abc').should.eql 'a'
+      end
     end
     
-    it 'should throw an error when anything but a string is passed'
-      -{ sprintf('%c', 1) }.should.throw_error
+    describe 'when given an integer'
+      it 'should output its character'
+        sprintf('%c', 102).should.eql 'f'
+        sprintf('%c', 111).should.eql 'o'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%c', {}) }.should.throw_error
+        -{ sprintf('%c', []) }.should.throw_error
+        -{ sprintf('%c', String) }.should.throw_error
+      end
     end
   end
   
