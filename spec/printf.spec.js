@@ -104,6 +104,15 @@ describe 'sprintf()'
     end
   end
   
+  describe '%o'
+    describe 'when given a number'
+      it 'should convert to octal'
+        sprintf('%o', 7).should.eql '7'
+        sprintf('%o', 8).should.eql '10'
+      end
+    end
+  end
+  
   describe 'given multiple'
     it 'should substitute globally'
       sprintf('%s, %s', 'foo', 'bar').should.eql 'foo, bar'
