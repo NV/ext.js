@@ -44,8 +44,8 @@ describe 'sprintf()'
   
   describe '%-5d'
     it 'should pad right'
-      sprintf('%5d', 5).should.eql '5    '
-      sprintf('%5d', 500).should.eql '500  '
+      sprintf('%-5d', 5).should.eql '5    '
+      sprintf('%-5d', 500).should.eql '500  '
     end
   end
   
