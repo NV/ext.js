@@ -58,4 +58,10 @@ describe 'sprintf()'
       sprintf('%s', [1,2]).should.eql '1,2'
     end
   end
+  
+  describe 'given multiple'
+    it 'should substitute globally'
+      sprintf('%s, %s', 'foo', 'bar').should.eql 'foo, bar'
+    end
+  end
 end
