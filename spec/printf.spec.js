@@ -8,6 +8,12 @@ describe 'sprintf()'
     end  
   end
   
+  describe 'given an invalid specifier'
+    it 'should throw an error'
+      -{ sprintf('%L') }.should.throw_error(/%L is not a valid specifier/)
+    end
+  end
+  
   describe '%c'
     describe 'when given a string'
       it 'should output a single character'
@@ -87,6 +93,14 @@ describe 'sprintf()'
       sprintf('%s', 12.99).should.eql '12.99'
       sprintf('%s', { foo: 'bar' }).should.eql '[object Object]'
       sprintf('%s', [1,2]).should.eql '1,2'
+    end
+  end
+  
+  describe '%b'
+    describe 'when given a number'
+      it 'should convert to binary'
+        sprintf('%b', 5).should.eql '101'
+      end
     end
   end
   
