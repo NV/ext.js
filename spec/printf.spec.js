@@ -33,18 +33,36 @@ describe 'sprintf()'
   end
   
   describe '%d'
-    it 'should convert to an integer'
-      sprintf('%d', '12').should.eql '12'
-      sprintf('%d', 12).should.eql '12'
-      sprintf('%d', 12.3).should.eql '12'
+    describe 'when given a string'
+      it 'should convert to an integer'
+        sprintf('%d', '12').should.eql 12
+      end
     end
     
-    it 'should throw an error when a non-numeric string is passed'
-      -{ sprintf('%d', 'foo') }.should.throw_error
+    describe 'when given a non-numeric string'
+      it 'should throw an error'
+        -{ sprintf('%d', 'foo') }.should.throw_error
+      end
     end
     
-    it 'should throw an error when a non-numeric object is passed'
-      -{ sprintf('%d', []) }.should.throw_error
+    describe 'when given an int'
+      it 'should output it'
+        sprintf('%d', 12).should.eql '12'
+      end
+    end
+    
+    describe 'when given a float'
+      it 'should convert to an integer'
+        sprintf('%d', 12.3).should.eql '12'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%d', {}) }.should.throw_error
+        -{ sprintf('%d', []) }.should.throw_error
+        -{ sprintf('%d', String) }.should.throw_error
+      end
     end
   end
   
