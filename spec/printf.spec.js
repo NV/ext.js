@@ -102,6 +102,14 @@ describe 'sprintf()'
         sprintf('%b', 5).should.eql '101'
       end
     end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%d', {}) }.should.throw_error
+        -{ sprintf('%d', []) }.should.throw_error
+        -{ sprintf('%d', String) }.should.throw_error
+      end
+    end
   end
   
   describe '%o'
@@ -109,6 +117,14 @@ describe 'sprintf()'
       it 'should convert to octal'
         sprintf('%o', 7).should.eql '7'
         sprintf('%o', 8).should.eql '10'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%d', {}) }.should.throw_error
+        -{ sprintf('%d', []) }.should.throw_error
+        -{ sprintf('%d', String) }.should.throw_error
       end
     end
   end
