@@ -2,6 +2,6 @@
 NODE = node
 
 test:
-	@$(NODE) spec/spec.node.js
+	@$(NODE) spec/node.js
 	
 .PHONY: test

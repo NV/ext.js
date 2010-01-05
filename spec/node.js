@@ -1,6 +1,6 @@
 
 process.mixin(GLOBAL, require('sys'))
-require.paths.unshift('spec', 'spec/lib/lib', 'lib')
+require.paths.unshift('spec', 'spec/lib', 'lib')
 require('jspec')
 require('ext/import')
 
@@ -27,5 +27,5 @@ else
     .exec('spec/string.spec.js')
     .exec('spec/date.spec.js')
     .exec('spec/printf.spec.js')
-JSpec.run({ formatter: JSpec.formatters.Terminal, failuresOnly: true })
+JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
