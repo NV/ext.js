@@ -41,7 +41,8 @@ describe 'sprintf()'
   describe '%d'
     describe 'when given a string'
       it 'should convert to an integer'
-        sprintf('%d', '12').should.eql 12
+        sprintf('%d', '12').should.eql '12'
+        sprintf('%d', '-12').should.eql '-12'
       end
     end
     
@@ -125,6 +126,30 @@ describe 'sprintf()'
         -{ sprintf('%d', {}) }.should.throw_error
         -{ sprintf('%d', []) }.should.throw_error
         -{ sprintf('%d', String) }.should.throw_error
+      end
+    end
+  end
+  
+  describe '%f'
+    describe 'when given a float'
+      it 'should output the float'
+        sprintf('%f', 5.99).should.eql '5.99'
+        sprintf('%f', -5.99).should.eql '-5.99'
+      end
+    end
+    
+    describe 'when given a numeric string'
+      it 'should convert to a float float'
+        sprintf('%f', '5.99').should.eql '5.99'
+      end
+    end
+    
+    describe 'with precision'
+      it 'should pad decimal places'
+        sprintf('%.2f', 5).should.eql '5.00'
+        sprintf('%.4f', 5).should.eql '5.0000'
+        sprintf('%.2f', 5.9).should.eql '5.90'
+        sprintf('%.4f', 5.95).should.eql '5.9500'
       end
     end
   end
