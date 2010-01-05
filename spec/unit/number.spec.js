@@ -14,16 +14,10 @@ describe 'Number'
     
     describe 'given a float'
       it 'should return a currency formatted string as a float'
-        number.currency(1.00).should.eql '1.00'
-        number.currency(1000.00).should.eql '1,000.00'
+        number.currency(1.12).should.eql '1.12'
+        number.currency(1000.1).should.eql '1,000.1'
         number.currency(100000.99).should.eql '100,000.99'
         number.currency(1000000.55).should.eql '1,000,000.55'
-      end
-      
-      describe 'with more than 2 decimal places'
-        it 'should fix to 2'
-          number.currency(1.1234).should.eql '1.12'
-        end
       end
     end
   end
