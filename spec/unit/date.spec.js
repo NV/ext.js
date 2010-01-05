@@ -31,6 +31,14 @@ describe 'Date'
       end  
     end
     
+    describe 'flag'
+      describe 'n'
+        it 'should ordinalize a numeric value'
+          (new Date('May 5 1987')).format('%ne').should.eql '5th'
+        end
+      end
+    end
+    
     describe '%a'
       it 'should represent a short day name'
         (new Date('May 5 1987')).format('day: %a').should.eql 'day: Tue'
