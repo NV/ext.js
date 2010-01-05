@@ -14,6 +14,7 @@ they will be available as methods. For quick access to all that ext.js has to of
 ### Number
   
   * Number#ordinalize / ordinalize(n)
+  * Number#currency   / currency(n)
   * Number#second     / Number#seconds
   * Number#minute     / Number#minutes
   * Number#hour       / Number#hours
