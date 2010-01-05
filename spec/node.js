@@ -19,13 +19,13 @@ readFile = function(path) {
 }
 
 if (process.ARGV[2])
-  JSpec.exec('spec/' + process.ARGV[2] + '.spec.js')  
+  JSpec.exec('spec/unit/' + process.ARGV[2] + '.spec.js')  
 else
   JSpec
-    .exec('spec/base64.spec.js')
-    .exec('spec/number.spec.js')
-    .exec('spec/string.spec.js')
-    .exec('spec/date.spec.js')
-    .exec('spec/printf.spec.js')
+    .exec('spec/unit/base64.spec.js')
+    .exec('spec/unit/number.spec.js')
+    .exec('spec/unit/string.spec.js')
+    .exec('spec/unit/date.spec.js')
+    .exec('spec/unit/printf.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
