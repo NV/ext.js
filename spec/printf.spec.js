@@ -148,8 +148,13 @@ describe 'sprintf()'
       it 'should pad decimal places'
         sprintf('%.2f', 5).should.eql '5.00'
         sprintf('%.4f', 5).should.eql '5.0000'
-        sprintf('%.2f', 5.9).should.eql '5.90'
-        sprintf('%.4f', 5.95).should.eql '5.9500'
+        sprintf('%.2f', 55.9).should.eql '55.90'
+        sprintf('%.4f', 555.95).should.eql '555.9500'
+      end
+      
+      it 'should restrict decimal places'
+        sprintf('%.2f', 5.1234).should.eql '5.12'
+        sprintf('%.1f', 55.1234).should.eql '55.1'
       end
     end
   end
