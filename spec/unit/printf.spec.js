@@ -73,6 +73,41 @@ describe 'sprintf()'
     end
   end
   
+  describe '%D'
+    describe 'when given a string'
+      it 'should convert to an ordinalized integer'
+        sprintf('%D', '12').should.eql '12th'
+        sprintf('%D', '2').should.eql '2nd'
+      end
+    end
+    
+    describe 'when given a non-numeric string'
+      it 'should throw an error'
+        -{ sprintf('%D', 'foo') }.should.throw_error
+      end
+    end
+    
+    describe 'when given an int'
+      it 'should output it'
+        sprintf('%D', 3).should.eql '3rd'
+      end
+    end
+    
+    describe 'when given a float'
+      it 'should convert to an integer'
+        sprintf('%D', 12.3).should.eql '12th'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%d', {}) }.should.throw_error
+        -{ sprintf('%d', []) }.should.throw_error
+        -{ sprintf('%d', String) }.should.throw_error
+      end
+    end
+  end
+  
   describe '%5d'
     it 'should pad left'
       sprintf('%5d', 5).should.eql '    5'
