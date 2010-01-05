@@ -118,5 +118,11 @@ describe 'Date'
         (new Date('December 5 1987 1:34:12 pm')).format('%H').should.eql '13'
       end
     end
+    
+    describe 'given multiple'
+      it 'should substitute globally'
+        (new Date('December 5 1987 1:34:12 pm')).format('%B %ne').should.eql 'December 5th'
+      end
+    end
   end
 end
