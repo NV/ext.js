@@ -106,9 +106,9 @@ describe 'sprintf()'
     
     describe 'when given an arbitrary object'
       it 'should throw an error'
-        -{ sprintf('%d', {}) }.should.throw_error
-        -{ sprintf('%d', []) }.should.throw_error
-        -{ sprintf('%d', String) }.should.throw_error
+        -{ sprintf('%b', {}) }.should.throw_error
+        -{ sprintf('%b', []) }.should.throw_error
+        -{ sprintf('%b', String) }.should.throw_error
       end
     end
   end
@@ -123,9 +123,43 @@ describe 'sprintf()'
     
     describe 'when given an arbitrary object'
       it 'should throw an error'
-        -{ sprintf('%d', {}) }.should.throw_error
-        -{ sprintf('%d', []) }.should.throw_error
-        -{ sprintf('%d', String) }.should.throw_error
+        -{ sprintf('%o', {}) }.should.throw_error
+        -{ sprintf('%o', []) }.should.throw_error
+        -{ sprintf('%o', String) }.should.throw_error
+      end
+    end
+  end
+  
+  describe '%x'
+    describe 'when given a number'
+      it 'should convert to lowercase hex'
+        sprintf('%x', 255).should.eql 'ff'
+        sprintf('%x', 16).should.eql '10'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%x', {}) }.should.throw_error
+        -{ sprintf('%x', []) }.should.throw_error
+        -{ sprintf('%x', String) }.should.throw_error
+      end
+    end
+  end
+  
+  describe '%X'
+    describe 'when given a number'
+      it 'should convert to uppercase hex'
+        sprintf('%X', 255).should.eql 'FF'
+        sprintf('%X', 16).should.eql '10'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%X', {}) }.should.throw_error
+        -{ sprintf('%X', []) }.should.throw_error
+        -{ sprintf('%X', String) }.should.throw_error
       end
     end
   end
@@ -155,6 +189,14 @@ describe 'sprintf()'
       it 'should restrict decimal places'
         sprintf('%.2f', 5.1234).should.eql '5.12'
         sprintf('%.1f', 55.1234).should.eql '55.1'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%f', {}) }.should.throw_error
+        -{ sprintf('%f', []) }.should.throw_error
+        -{ sprintf('%f', String) }.should.throw_error
       end
     end
   end
