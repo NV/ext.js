@@ -31,6 +31,7 @@ they will be available as methods. For quick access to all that ext.js has to of
 
 ### String
 
+  * String#variable
   * String#uppercase
   * String#lowercase
   * String#camelcase
