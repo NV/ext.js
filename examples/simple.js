@@ -5,6 +5,12 @@ process.mixin(require('sys'))
 process.mixin(require('ext/printf'))
 var number = require('ext/number')
 
+p(number.ordinalize(4))
+// => '4th'
+
+p((2).ordinalize)
+// => '2nd'
+
 p('foo bar'.md5)
 // => '327b6f07435811239bc47e1544353273'
 
