@@ -29,3 +29,9 @@ printf('%10s made $%C on the %D\n', 'scott', 2000, 3)
 
 p(sprintf('#%X%X%X', 255, 255, 0))
 // => '#FFFF00'
+
+p((new Date('May 25, 1987')).format('%Y-%m-%d'))
+// => '1987-05-25'
+
+p((new Date('May 25, 1987')).format('took place on %A the %nd'))
+// => 'took place on Monday the 25th'
