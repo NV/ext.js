@@ -75,8 +75,6 @@ they will be available as methods. For quick access to all that ext.js has to of
 
 ## Running Tests
 
-Initialize and update the JSpec submodule, then run:
-
     $ make test
 
 ## License 
