@@ -33,6 +33,15 @@ describe 'String'
         'foo bar baz'.camelcase.should.eql 'FooBarBaz'
       end
     end
+    
+    describe 'given several words with arbitrary characters'
+      it 'should convert them to camel case and disregard the arbitrary characters'
+        'foo-bar-baz'.camelcase.should.eql 'FooBarBaz'
+        'foo_bar_baz'.camelcase.should.eql 'FooBarBaz'
+        'foo-bar_baz'.camelcase.should.eql 'FooBarBaz'
+        'base 64-encode'.camelcase.should.eql 'Base64Encode'
+      end
+    end
   end
   
   describe '#digitize'
