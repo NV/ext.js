@@ -5,6 +5,9 @@ process.mixin(require('sys'))
 process.mixin(require('ext/printf'))
 var number = require('ext/number')
 
+p((5).hours)
+// => 180000
+
 p(number.ordinalize(4))
 // => '4th'
 
