@@ -65,6 +65,10 @@ they will be available as methods. For quick access to all that ext.js has to of
   * String#base64Encode / encode(str)
   * String#base64Decode / decode(str)
   
+## MD5
+
+  * String#md5 / hash(str)
+  
 ### printf
   
   * sprintf(str[, arg[, ...]])
