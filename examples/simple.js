@@ -1,8 +1,7 @@
 
 require.paths.unshift('lib')
-require('ext/import')
+require('ext')
 process.mixin(require('sys'))
-process.mixin(require('ext/printf'))
 var number = require('ext/number')
 
 p((5).hours)
