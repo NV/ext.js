@@ -200,6 +200,13 @@ describe 'sprintf()'
         sprintf('%x', 255).should.eql 'ff'
         sprintf('%x', 16).should.eql '10'
       end
+      
+      describe '< F'
+        it 'should pad with 0'
+          sprintf('%x', 15).should.eql '0f'
+          sprintf('%x', 5).should.eql '05'
+        end
+      end
     end
     
     describe 'when padded'
@@ -222,6 +229,13 @@ describe 'sprintf()'
       it 'should convert to uppercase hex'
         sprintf('%X', 255).should.eql 'FF'
         sprintf('%X', 16).should.eql '10'
+      end
+      
+      describe '< F'
+        it 'should pad with 0'
+          sprintf('%X', 15).should.eql '0F'
+          sprintf('%X', 5).should.eql '05'
+        end
       end
     end
     
@@ -255,9 +269,9 @@ describe 'sprintf()'
     
     describe 'when given an arbitrary object'
       it 'should throw an error'
-        -{ sprintf('%X', {}) }.should.throw_error
-        -{ sprintf('%X', []) }.should.throw_error
-        -{ sprintf('%X', String) }.should.throw_error
+        -{ sprintf('%M', {}) }.should.throw_error
+        -{ sprintf('%M', []) }.should.throw_error
+        -{ sprintf('%M', String) }.should.throw_error
       end
     end
   end
