@@ -240,6 +240,28 @@ describe 'sprintf()'
     end
   end
   
+  describe '%M'
+    describe 'when given a string'
+      it 'should convert to an MD5 hash'
+        sprintf('%M', 'foobar').should.eql '3858f62230ac3c915f300c664312c63f'
+      end
+    end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%34M', 'foobar').should.eql '  3858f62230ac3c915f300c664312c63f'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%X', {}) }.should.throw_error
+        -{ sprintf('%X', []) }.should.throw_error
+        -{ sprintf('%X', String) }.should.throw_error
+      end
+    end
+  end
+  
   describe '%C'
     describe 'when given a float'
       it 'should output a currency formatted string'
