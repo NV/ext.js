@@ -11,6 +11,9 @@ p(number.ordinalize(4))
 p((2).ordinalize)
 // => '2nd'
 
+p('user name'.camelcase)
+// => 'UserName'
+
 p('foo bar'.md5)
 // => '327b6f07435811239bc47e1544353273'
 
