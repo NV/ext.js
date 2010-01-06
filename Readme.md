@@ -72,6 +72,8 @@ they will be available as methods. For quick access to all that ext.js has to of
 ### printf
   
   * sprintf(str[, arg[, ...]])
+  * eprintf(str[, arg[, ...]])
+  * printf(str[, arg[, ...]])
 
 ## Running Tests
 
