@@ -26,5 +26,6 @@ else
     .exec('spec/unit/string.spec.js')
     .exec('spec/unit/date.spec.js')
     .exec('spec/unit/printf.spec.js')
+    .exec('spec/unit/md5.spec.js')
 JSpec.run({ reporter: JSpec.reporters.Terminal, failuresOnly: true })
 JSpec.report()
