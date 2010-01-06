@@ -199,6 +199,34 @@ describe 'sprintf()'
     end
   end
   
+  describe '%C'
+    describe 'when given a float'
+      it 'should output a currency formatted string'
+        sprintf('%C', 1000.99).should.eql '1,000.99'
+      end
+      
+      describe 'when more than 2 decimal places'
+        it 'should fix to 2'
+          sprintf('%C', 1000.1234).should.eql '1,000.12'
+        end
+      end
+    end
+    
+    describe 'when given an integer'
+      it 'should append .00'
+        sprintf('%C', 1000).should.eql '1,000.00'
+      end
+    end
+    
+    describe 'when given an arbitrary object'
+      it 'should throw an error'
+        -{ sprintf('%C', {}) }.should.throw_error
+        -{ sprintf('%C', []) }.should.throw_error
+        -{ sprintf('%C', String) }.should.throw_error
+      end
+    end
+  end
+  
   describe '%f'
     describe 'when given a float'
       it 'should output the float'
