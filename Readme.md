@@ -41,7 +41,7 @@ they will be available as methods. For quick access to all that ext.js has to of
   * String#remove(pattern)
   * String#startsWith(str)
   * String#endsWith(str)
-  * String#capitalize([all])
+  * String#capitalize([all]) / capitalize(str[, all])
   * String#wrap(prefix[, suffix])
   
 ### Date
