@@ -29,6 +29,12 @@ describe 'sprintf()'
       end
     end
     
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5c', '12').should.eql '    1'
+      end
+    end
+    
     describe 'when given an arbitrary object'
       it 'should throw an error'
         -{ sprintf('%c', {}) }.should.throw_error
@@ -61,6 +67,12 @@ describe 'sprintf()'
     describe 'when given a float'
       it 'should convert to an integer'
         sprintf('%d', 12.3).should.eql '12'
+      end
+    end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5d', 12).should.eql '   12'
       end
     end
     
@@ -99,19 +111,18 @@ describe 'sprintf()'
       end
     end
     
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5D', '12').should.eql ' 12th'
+      end
+    end
+    
     describe 'when given an arbitrary object'
       it 'should throw an error'
         -{ sprintf('%d', {}) }.should.throw_error
         -{ sprintf('%d', []) }.should.throw_error
         -{ sprintf('%d', String) }.should.throw_error
       end
-    end
-  end
-  
-  describe '%5d'
-    it 'should pad left'
-      sprintf('%5d', 5).should.eql '    5'
-      sprintf('%5d', 500).should.eql '  500'
     end
   end
   
@@ -130,12 +141,24 @@ describe 'sprintf()'
       sprintf('%s', { foo: 'bar' }).should.eql '[object Object]'
       sprintf('%s', [1,2]).should.eql '1,2'
     end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5s', '12').should.eql '   12'
+      end
+    end
   end
   
   describe '%b'
     describe 'when given a number'
       it 'should convert to binary'
         sprintf('%b', 5).should.eql '101'
+      end
+    end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5b', 5).should.eql '  101'
       end
     end
     
@@ -156,6 +179,12 @@ describe 'sprintf()'
       end
     end
     
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5o', 7).should.eql '    7'
+      end
+    end
+    
     describe 'when given an arbitrary object'
       it 'should throw an error'
         -{ sprintf('%o', {}) }.should.throw_error
@@ -173,6 +202,12 @@ describe 'sprintf()'
       end
     end
     
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5x', 255).should.eql '   ff'
+      end
+    end
+    
     describe 'when given an arbitrary object'
       it 'should throw an error'
         -{ sprintf('%x', {}) }.should.throw_error
@@ -187,6 +222,12 @@ describe 'sprintf()'
       it 'should convert to uppercase hex'
         sprintf('%X', 255).should.eql 'FF'
         sprintf('%X', 16).should.eql '10'
+      end
+    end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5X', 255).should.eql '   FF'
       end
     end
     
@@ -215,6 +256,12 @@ describe 'sprintf()'
     describe 'when given an integer'
       it 'should append .00'
         sprintf('%C', 1000).should.eql '1,000.00'
+      end
+    end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%10C', 25).should.eql '     25.00'
       end
     end
     
@@ -253,6 +300,18 @@ describe 'sprintf()'
         sprintf('%.2f', 5.1234).should.eql '5.12'
         sprintf('%.1f', 55.1234).should.eql '55.1'
       end
+      
+      describe 'when padded'
+        it 'should be padded'
+          sprintf('%10.4f', 5.99).should.eql '    5.9900'
+        end
+      end
+    end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('%5f', 5.99).should.eql ' 5.99'
+      end
     end
     
     describe 'when given an arbitrary object'
@@ -267,6 +326,12 @@ describe 'sprintf()'
   describe 'given multiple'
     it 'should substitute globally'
       sprintf('%s, %s', 'foo', 'bar').should.eql 'foo, bar'
+    end
+    
+    describe 'when padded'
+      it 'should be padded'
+        sprintf('[%5s:%-5s]', 'foo', 'bar').should.eql '[  foo:bar  ]'
+      end
     end
   end
 end
