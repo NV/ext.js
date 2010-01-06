@@ -27,6 +27,21 @@ describe 'String'
     end
   end
   
+  describe '#variable'
+    describe 'when defined'
+      it 'should return the global variable representing its name'
+        foo = 'bar'
+        'foo'.variable.should.eql 'bar'
+      end
+    end
+    
+    describe 'when undefined'
+      it 'should return undefined'
+        'not available'.variable.should.be_undefined
+      end
+    end
+  end
+  
   describe '#camelcase'
     describe 'given several words'
       it 'should convert them to camel case'
