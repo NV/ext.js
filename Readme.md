@@ -37,6 +37,8 @@ To use simply:
   * String#camelcase
   * String#digitize
   * String#strip
+  * String#before(str)
+  * String#after(str)
   * String#padLeft(width[, char])
   * String#padRight(width[, char])
   * String#remove(pattern)
