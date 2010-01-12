@@ -95,6 +95,20 @@ describe 'String'
     end
   end
   
+  describe '#after()'
+    it 'should return contents after the first ocurrence of the given string'
+      'some foo bar'.after('foo').should.eql ' bar'
+      'some foo bar'.after('rawr').should.eql ''
+    end
+  end
+  
+  describe '#before()'
+    it 'should return contents before the first ocurrence of the given string'
+      'some foo bar'.before('foo').should.eql 'some '
+      'some foo bar'.before('rawr').should.eql ''
+    end
+  end
+  
   describe '#remove()'
     it 'should replace substrings matching the given regexp'
       'foobar barfoo'.remove(/foo(bar)?/g).should.eql ' bar'
