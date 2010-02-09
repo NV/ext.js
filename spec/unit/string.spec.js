@@ -109,6 +109,16 @@ describe 'String'
     end
   end
   
+  describe '#between()'
+    it 'should return contents between the first ocurrence of the given strings'
+      'some foo bar'.between('some', 'bar').should.eql ' foo '
+      'some foo bar'.between('some', 'rawr').should.eql ''
+      'some foo bar'.between('rawr', 'bar').should.eql ''
+      'some foo bar'.between('some').should.eql ' foo bar'
+      'some foo bar'.between('rawr').should.eql ''
+    end
+  end
+  
   describe '#remove()'
     it 'should replace substrings matching the given regexp'
       'foobar barfoo'.remove(/foo(bar)?/g).should.eql ' bar'
